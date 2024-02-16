@@ -77,7 +77,7 @@ func CommentAuthorization() gin.HandlerFunc {
 	}
 }
 
-func MediaAuthorization() gin.HandlerFunc {
+func SocialMediaAuthorization() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		db := database.InitDB()
 		getId, err := strconv.Atoi(c.Param("socialMediaId"))
