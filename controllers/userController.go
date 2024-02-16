@@ -52,7 +52,7 @@ func (u *UserRepository) GetAllUser(c *gin.Context) {
 
 	AllUser := []models.User{}
 
-	if err := u.DB.Preload("Photos").Preload("Comments").Preload("Medias").Find(&AllUser).Error; err != nil {
+	if err := u.DB.Preload("Photos").Preload("Comments").Preload("SocialMedias").Find(&AllUser).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error":   "can't find data",
 			"message": err.Error(),
